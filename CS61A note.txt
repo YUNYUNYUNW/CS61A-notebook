@@ -1,0 +1,155 @@
+''''''''''
+
+
+'''
+
+'''''''''def welcome():
+    print('Go')
+    return 'hello'
+def cal():
+    print('Bears')
+    return 'world'
+welcome()
+print(welcome()
+print(welcome(),cal())'''''''''
+
+'''def sums_print(n):
+    print(n)
+    def next_sum(k):
+        return sums_print(n + k)
+    return next_sum
+
+sums_print(3)(5)(7)'''
+'''def digit_all_caul(n):
+    all_but_last , last = n // 10 , n % 10
+    if n >= 10:
+        return digit_all_caul(all_but_last) + last
+    else:
+        return n
+
+print(digit_all_caul(139))'''
+'''def recursive_function_print(n):
+    if n < 10:
+        print(n)
+    else:
+        print(n)
+        recursive_function_print(n//10)
+        print(n)
+recursive_function_print(1234)
+
+'''
+'''write a function that print inverse cascade'''
+'''result = []
+def substract(m):
+
+
+    if m < 10:
+        result.append(m)
+        return result
+    else:
+        result.append(m)
+        substract(m//10)
+
+        return result
+
+
+ah = substract(1234)
+print(ah)
+ah_wise = sorted(ah)
+ah_antiwise = sorted(ah,reverse = True)
+ah_antiwise.(1)
+for number in ah_wise:
+    print(number)
+for number in ah_antiwise:
+    print(number)
+'''
+'''def inverse_cascade(n):
+    grow(n)
+    print(n)
+    shrink(n)
+def f_then_g(f,g,n):
+    if n:
+        f(n)
+        g(n)
+grow = lambda n : f_then_g(grow, print , n//10)
+shrink = lambda n : f_then_g(print , shrink , n//10)
+
+inverse_cascade(1234)
+'''
+'''Tree recursion'''
+'''from ucb import trace
+@trace
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+print(fibonacci(5))'''
+'''counting partitions'''
+'''counting the partitions of integer.'''
+'''def partitions_counting(n , m):
+    if n == 0:
+        return 1
+    elif m == 0:
+        return 0
+    elif n < 0:
+        return 0
+    else:
+        with_m = partitions_counting(n-m , m)
+        without_m = partitions_counting(n , m-1)
+        return with_m + without_m
+print(partitions_counting(6,4))
+'''
+'''from operator import add
+ah = [2 , 7 , 1 , 8 , 3]'''
+'''def count(s,ah):
+    total = 0
+    length = len(ah)
+    for element in ah:
+        if element == s:
+            total += 1
+    return total
+print(count(1,[1,2,3,1,1]))'''
+'''ah = [[1,2] , [1,3] , [1,4] , [2,4]]
+total = 0
+for x,y in ah:
+    if x - y == -1:
+        total += 1
+print(total)
+'''
+'''print(list(range(1,3)))'''
+'''ah = [1 , 3, 5 ,7 ,9]
+ah = [x+1 for x in ah]
+print(ah)'''
+'''def divisor_find(n):
+    return [1] + [x for x in range(2,n) if n%x == 0]
+print(divisor_find(12))'''
+'''slice application'''
+'''def sum_digits(s):
+    if len(s) == 0:
+        return 0
+    else:
+        return s[0] + sum_digits(s[1:])
+print(sum_digits([1,2,3,4]))'''
+'''return the sublist of positive integer s with the largest sum that is less than n'''
+'''def sum_list(s):
+    if s == []:
+        return 0
+    else:
+        return sum(s)
+
+def sublist(s , n):
+    if s == []:
+        return []
+    elif s[0] > n:
+        return sublist(s[1:] , n)
+    else:
+        with_s0 = [s[0]]+ sublist(s[1:] , n - s[0])
+        without_s0 = sublist(s[1:] , n)
+        if sum_list(with_s0) > sum_list(without_s0):
+            return with_s0
+        else:
+            return without_s0
+print(sublist([4,2,5,6,7],20))'''
